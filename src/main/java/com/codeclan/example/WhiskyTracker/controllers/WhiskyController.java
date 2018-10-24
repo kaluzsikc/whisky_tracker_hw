@@ -1,5 +1,6 @@
 package com.codeclan.example.WhiskyTracker.controllers;
 
+import com.codeclan.example.WhiskyTracker.models.Distillery;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import com.codeclan.example.WhiskyTracker.repositories.DistilleryRepository.DistilleryRepository;
 import com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository.WhiskyRepository;
@@ -33,6 +34,11 @@ public class WhiskyController {
         return whiskyRepository.getAllWhiskiesFromRegion(region);
     }
 
+    //TODO: route for all whiskies from a particular distillery and a specific age
+    @GetMapping(value = "distilleryAndAge/{distillery}/{age}")
+    public List<Whisky> getAllWhiskiesFromSpecificDistilleryAndSpecificAge(@PathVariable Distillery distillery, @PathVariable int age) {
+        return whiskyRepository.getAllWhiskiesFromSpecificDistilleryAndSpecificAge(distillery,age);
+    }
 
 
 }

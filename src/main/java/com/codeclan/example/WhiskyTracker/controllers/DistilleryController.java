@@ -25,6 +25,11 @@ public class DistilleryController {
         return distilleryRepository.getAllDistilleryFromRegion(region);
     }
 
+    //TODO: route for all distilleries that have 12 years old whiskies
+    @GetMapping(value = "age/{age}")
+    public List<Distillery> getAllDistilleriesWithWhiskies12YearsOld(@PathVariable int age) {
+        return distilleryRepository.getAllDistilleriesWithWhiskies12YearsOld(age);
+    }
 
 }
 

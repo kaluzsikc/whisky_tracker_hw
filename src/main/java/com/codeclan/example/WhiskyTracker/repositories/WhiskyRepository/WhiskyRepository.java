@@ -1,5 +1,6 @@
 package com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository;
 
+import com.codeclan.example.WhiskyTracker.models.Distillery;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -11,4 +12,5 @@ public interface WhiskyRepository extends JpaRepository<Whisky, Long>, WhiskyRep
 
     List<Whisky> getAllWhiskyFromYear(int year);
     List<Whisky> getAllWhiskiesFromRegion(String region);
+    List<Whisky> getAllWhiskiesFromSpecificDistilleryAndSpecificAge(Distillery distillery, int age);
 }
