@@ -35,4 +35,5 @@ public class WhiskyTrackerApplicationTests {
 	public void canGetDistilleryFromRegion(){
 		List<Distillery> results = distilleryRepository.getAllDistilleryFromRegion("Highland");
 	}
+
 }

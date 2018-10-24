@@ -27,6 +27,13 @@ public class WhiskyController {
         return whiskyRepository.getAllWhiskyFromYear(year);
     }
 
+    //TODO: route for all whiskies from a particular region
+    @GetMapping(value = "region/{region}")
+    public List<Whisky> getAllWhiskiesFromRegion(@PathVariable String region){
+        return whiskyRepository.getAllWhiskiesFromRegion(region);
+    }
+
+
 
 }
 

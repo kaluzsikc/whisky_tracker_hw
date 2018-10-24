@@ -3,6 +3,7 @@ package com.codeclan.example.WhiskyTracker.controllers;
 import com.codeclan.example.WhiskyTracker.models.Distillery;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import com.codeclan.example.WhiskyTracker.repositories.DistilleryRepository.DistilleryRepository;
+import com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository.WhiskyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +19,12 @@ public class DistilleryController {
     @Autowired
     DistilleryRepository distilleryRepository;
 
-
-    //TODO: route for all whiskies from a particular region
+    //TODO: route for all distilleries from a particular region
     @GetMapping(value = "from/{region}")
     public List<Distillery> getAllDistilleryFromRegion(@PathVariable String region){
         return distilleryRepository.getAllDistilleryFromRegion(region);
     }
+
 
 }
 

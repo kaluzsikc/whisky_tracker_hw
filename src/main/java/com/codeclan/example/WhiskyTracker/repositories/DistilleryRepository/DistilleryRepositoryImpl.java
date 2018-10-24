@@ -25,7 +25,6 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
         try{
             Criteria cr = session.createCriteria(Distillery.class);
             cr.add(Restrictions.eq("region", region));
-
             results = cr.list();
         }catch(HibernateException ex){
             ex.printStackTrace();
